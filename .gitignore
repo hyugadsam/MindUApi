@@ -50,3 +50,13 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+MindUWebApi/MindUWebApi/bin/Debug/
+
+MindUWebApi/MindUWebApi/obj/Debug/
+
+MindUWebApi/Dtos/bin/Debug/
+
+MindUWebApi/DBService/bin/
+
+MindUWebApi/ApplicationServices/bin/

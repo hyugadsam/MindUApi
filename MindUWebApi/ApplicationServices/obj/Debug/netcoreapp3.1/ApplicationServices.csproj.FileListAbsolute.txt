@@ -1,0 +1,15 @@
+C:\Users\Sam\Documents\Repos\MindUWebApi\ApplicationServices\bin\Debug\netcoreapp3.1\ApplicationServices.deps.json
+C:\Users\Sam\Documents\Repos\MindUWebApi\ApplicationServices\bin\Debug\netcoreapp3.1\ApplicationServices.dll
+C:\Users\Sam\Documents\Repos\MindUWebApi\ApplicationServices\bin\Debug\netcoreapp3.1\ApplicationServices.pdb
+C:\Users\Sam\Documents\Repos\MindUWebApi\ApplicationServices\obj\Debug\netcoreapp3.1\ApplicationServices.csproj.AssemblyReference.cache
+C:\Users\Sam\Documents\Repos\MindUWebApi\ApplicationServices\obj\Debug\netcoreapp3.1\ApplicationServices.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sam\Documents\Repos\MindUWebApi\ApplicationServices\obj\Debug\netcoreapp3.1\ApplicationServices.AssemblyInfoInputs.cache
+C:\Users\Sam\Documents\Repos\MindUWebApi\ApplicationServices\obj\Debug\netcoreapp3.1\ApplicationServices.AssemblyInfo.cs
+C:\Users\Sam\Documents\Repos\MindUWebApi\ApplicationServices\obj\Debug\netcoreapp3.1\ApplicationServices.csproj.CoreCompileInputs.cache
+C:\Users\Sam\Documents\Repos\MindUWebApi\ApplicationServices\obj\Debug\netcoreapp3.1\ApplicationServices.dll
+C:\Users\Sam\Documents\Repos\MindUWebApi\ApplicationServices\obj\Debug\netcoreapp3.1\ApplicationServices.pdb
+C:\Users\Sam\Documents\Repos\MindUWebApi\ApplicationServices\bin\Debug\netcoreapp3.1\DBService.dll
+C:\Users\Sam\Documents\Repos\MindUWebApi\ApplicationServices\bin\Debug\netcoreapp3.1\Dtos.dll
+C:\Users\Sam\Documents\Repos\MindUWebApi\ApplicationServices\bin\Debug\netcoreapp3.1\DBService.pdb
+C:\Users\Sam\Documents\Repos\MindUWebApi\ApplicationServices\bin\Debug\netcoreapp3.1\Dtos.pdb
+C:\Users\Sam\Documents\Repos\MindUWebApi\ApplicationServices\obj\Debug\netcoreapp3.1\ApplicationServices.csproj.CopyComplete
