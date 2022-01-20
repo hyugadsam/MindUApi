@@ -19,7 +19,7 @@ namespace DBService.Entities
         public string TimeZone { get; set; }
         public int Levelid { get; set; }
         public bool IsGraduated { get; set; }
-        public bool IsActive { get; set; }
+        public bool? IsActive { get; set; }
 
         public virtual Levels Level { get; set; }
         public virtual ICollection<CollaboratorsTechnologies> CollaboratorsTechnologies { get; set; }

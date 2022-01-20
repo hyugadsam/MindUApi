@@ -15,7 +15,7 @@ namespace DBService.Entities
         public string Password { get; set; }
         public string Salt { get; set; }
         public int RoleId { get; set; }
-        public bool IsActive { get; set; }
+        public bool? IsActive { get; set; }
 
         public virtual Roles Role { get; set; }
     }

@@ -60,3 +60,13 @@ MindUWebApi/Dtos/bin/Debug/
 MindUWebApi/DBService/bin/
 
 MindUWebApi/ApplicationServices/bin/
+
+MindUWebApi/ApplicationServices/obj/Debug/
+
+MindUWebApi/ApplicationServices/obj/
+
+MindUWebApi/DBService/obj/
+
+MindUWebApi/Dtos/obj/
+
+MindUWebApi/MindUWebApi/obj/

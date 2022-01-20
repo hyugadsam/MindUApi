@@ -6,6 +6,10 @@ namespace Dtos.Responses
 {
     public class BasicResponse
     {
+        public BasicResponse()
+        {
+
+        }
         public int Code { get; set; }
         public string Message { get; set; }
     }

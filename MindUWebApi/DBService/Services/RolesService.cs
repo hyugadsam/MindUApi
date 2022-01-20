@@ -2,6 +2,7 @@
 using DBService.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace DBService.Services
@@ -17,7 +18,7 @@ namespace DBService.Services
 
         public async Task<List<Roles>> GetRoles()
         {
-            return await context.Roles.ToListAsync();
+            return await context.Roles.Where(r => r.RoleId > 1).ToListAsync();  //No enviar el SuperAdmin
         }
 
     }
