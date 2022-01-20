@@ -7,14 +7,18 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using System;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.OpenApi.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using MindUWebApi.Loggers;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Identity;
 
 namespace MindUWebApi
 {
@@ -30,38 +34,84 @@ namespace MindUWebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<MindUContext>( options => options.UseSqlServer(Configuration.GetConnectionString("Default")) );
-            //Logger por inyeccion de dependencias, pero no puede resolver la dependencia del dbContext al instanciar el logger provider
-            //services.AddDbContextFactory<MindUContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Logs")) );
-            //services.AddSingleton<ILoggerProvider, DbLoggerProvider>();
-
-            services.AddSwaggerGen();
+            services.AddDbContext<MindUContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApiMindU", Version = "v1" });
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type= ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[]{ }
+                    }
+                });
+            });
             services.AddAutoMapper(typeof(AutoMapperProfiles));
             services.AddTransient<AppServiceRoles>();
             services.AddTransient<AppServiceUsers>();
-            services.AddResponseCaching();
-            
+            //services.AddResponseCaching();
+            //Identificar a los usuarios
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["TokenKey"])),
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
+            //Manejar los permisos por roles y token
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("SuperAdminPolicity", policy =>
+                {
+                    policy.RequireClaim("Role", new string[] { "SuperAdmin" });
+                });
+                options.AddPolicy("AdminPolicity", policy =>
+                {
+                    policy.RequireClaim("Role", new string [] { "Admin", "SuperAdmin" });
+                });
+                options.AddPolicy("UserPolicity", policy =>
+                {
+                    policy.RequireClaim("Role", new string[] { "User", "Admin", "SuperAdmin" });
+                });
+            });
             services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            var serviceProvider = app.ApplicationServices.CreateScope().ServiceProvider;
-            var appDBContext = serviceProvider.GetRequiredService<MindUContext>();
-            loggerFactory.AddProvider(new DbLoggerProvider(appDBContext));
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

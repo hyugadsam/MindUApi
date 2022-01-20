@@ -28,6 +28,14 @@ namespace ApplicationServices.Services
             return await service.CreateUser(userDb);
         }
 
+        public async Task<BasicResponse> CreateBasicUser(NewBasicUserRequest user)
+        {
+            var userDb = mapper.Map<NewUserRequest>(user);  //Solo mapea y asigna el rol por defecto para delegarlo al createUser principal
+            userDb.RoleId = Dtos.Enums.EnumRoles.User;
+
+            return await CreateUser(userDb);
+        }
+
         public async Task<BasicResponse> UpdateUser(UpdateUserRequest user)
         {
             var userDb = mapper.Map<Users>(user);
@@ -39,9 +47,9 @@ namespace ApplicationServices.Services
             return await service.DeactivateUser(email);
         }
 
-        public async Task<UserValidationResponse> IdentifyUser(string Email, string Password)
+        public async Task<UserValidationResponse> IdentifyUser(LoginRequest credentials)
         {
-            var user = await service.IdentifyUser(Email, Password);
+            var user = await service.IdentifyUser(credentials);
             return mapper.Map<UserValidationResponse>(user);
         }
         

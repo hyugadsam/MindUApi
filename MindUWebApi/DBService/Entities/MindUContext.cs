@@ -2,7 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-#nullable disable
+// Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
+// If you have enabled NRTs for your project, then un-comment the following line:
+// #nullable disable
 
 namespace DBService.Entities
 {
@@ -17,7 +19,6 @@ namespace DBService.Entities
         {
         }
 
-        public virtual DbSet<ApiLogs> ApiLogs { get; set; }
         public virtual DbSet<Collaborators> Collaborators { get; set; }
         public virtual DbSet<CollaboratorsTechnologies> CollaboratorsTechnologies { get; set; }
         public virtual DbSet<Levels> Levels { get; set; }
@@ -29,35 +30,16 @@ namespace DBService.Entities
         {
             if (!optionsBuilder.IsConfigured)
             {
-                throw new Exception("DbContext is not configured");
+                throw new Exception("DbContext is not Configured");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
-
-            modelBuilder.Entity<ApiLogs>(entity =>
-            {
-                entity.HasKey(e => e.LogId);
-
-                entity.Property(e => e.CreateDate).HasColumnType("datetime");
-
-                entity.Property(e => e.EventName)
-                    .IsRequired()
-                    .HasMaxLength(250);
-
-                entity.Property(e => e.LogLevel)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Source)
-                    .IsRequired()
-                    .HasMaxLength(500);
-            });
-
             modelBuilder.Entity<Collaborators>(entity =>
             {
+                entity.HasKey(e => e.CollaboratorId);
+
                 entity.Property(e => e.FullName)
                     .IsRequired()
                     .HasMaxLength(100);
@@ -99,6 +81,8 @@ namespace DBService.Entities
 
             modelBuilder.Entity<Levels>(entity =>
             {
+                entity.HasKey(e => e.LevelId);
+
                 entity.Property(e => e.Description)
                     .IsRequired()
                     .HasMaxLength(50);
@@ -106,6 +90,8 @@ namespace DBService.Entities
 
             modelBuilder.Entity<Roles>(entity =>
             {
+                entity.HasKey(e => e.RoleId);
+
                 entity.Property(e => e.RoleName)
                     .IsRequired()
                     .HasMaxLength(50);
@@ -113,6 +99,8 @@ namespace DBService.Entities
 
             modelBuilder.Entity<Technologies>(entity =>
             {
+                entity.HasKey(e => e.TechnologyId);
+
                 entity.Property(e => e.TechnologyId).ValueGeneratedNever();
 
                 entity.Property(e => e.Description)
@@ -122,6 +110,8 @@ namespace DBService.Entities
 
             modelBuilder.Entity<Users>(entity =>
             {
+                entity.HasKey(e => e.UserId);
+
                 entity.Property(e => e.Email)
                     .IsRequired()
                     .HasMaxLength(50);

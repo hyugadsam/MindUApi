@@ -1,5 +1,5 @@
 ﻿using DBService.Entities;
-using DBService.Models;
+using Dtos.Request;
 using Dtos.Responses;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,7 +11,7 @@ namespace DBService.Interfaces
         Task<BasicResponse> CreateUser(Users user);
         Task<BasicResponse> UpdateUser(Users user);
         Task<BasicResponse> DeactivateUser(string email);
-        Task<LoginResponse> IdentifyUser(string Email, string Password);
+        Task<Models.LoginResponse> IdentifyUser(LoginRequest credentials);
         Task<List<Users>> GetList();
 
     }

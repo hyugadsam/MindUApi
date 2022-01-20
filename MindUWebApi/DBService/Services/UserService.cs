@@ -1,7 +1,7 @@
 ﻿using DBService.Entities;
 using DBService.Interfaces;
-using DBService.Models;
 using DBService.Security;
+using Dtos.Request;
 using Dtos.Responses;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -42,7 +42,7 @@ namespace DBService.Services
             }
             catch (Exception ex)
             {
-                logger.LogError($"Error at DBService.Services.UserService.CreateUser: \n {ex.Message}\nStackTrace:{ex.StackTrace}");
+                logger.LogError(ex, "Error at DBService.Services.UserService.CreateUser");
                 return new BasicResponse()
                 {
                     Message = "Creation Error Verify the request",
@@ -72,7 +72,7 @@ namespace DBService.Services
             }
             catch (Exception ex)
             {
-                logger.LogError($"Error at DBService.Services.UserService.DeactivateUser: \n {ex.Message}\nStackTrace:{ex.StackTrace}");
+                logger.LogError(ex, "Error at DBService.Services.UserService.DeactivateUser");
                 return new BasicResponse()
                 {
                     Message = "Creation Error Verify the request",
@@ -81,23 +81,23 @@ namespace DBService.Services
             }
         }
 
-        public async Task<LoginResponse> IdentifyUser(string Email, string Password)
+        public async Task<DBService.Models.LoginResponse> IdentifyUser(LoginRequest credentials)
         {
             try
             {
-                var userDb = await ExistUser(Email);
-                if (userDb == null) return new LoginResponse() { Message = "User dosent exist", Code = 400 };
+                var userDb = await ExistUser(credentials.Email);
+                if (userDb == null || !userDb.IsActive) return new DBService.Models.LoginResponse() { Message = "User dosent exist", Code = 400 };
 
-                if (userDb.Password.Equals(Hash.HashPasword(Password, userDb.Salt)))
-                    return new LoginResponse() { Code = 200, Message = "User identified success", User = userDb };
+                if (userDb.Password.Equals(Hash.HashPasword(credentials.Password, userDb.Salt)))
+                    return new DBService.Models.LoginResponse() { Code = 200, Message = "User identified success", User = userDb };
                 else
-                    return new LoginResponse() { Code = 400, Message = "Invalid credentials" }; //Wrong password
+                    return new DBService.Models.LoginResponse() { Code = 400, Message = "Invalid credentials" }; //Wrong password
 
             }
             catch (Exception ex)
             {
-                logger.LogError($"Error at DBService.Services.UserService.IdentifyUser: \n {ex.Message}\nStackTrace:{ex.StackTrace}");
-                return new LoginResponse() { Code = 500, Message = "Internal Error, contact support" };
+                logger.LogError(ex, "Error at DBService.Services.UserService.IdentifyUser");
+                return new DBService.Models.LoginResponse() { Code = 500, Message = "Internal Error, contact support" };
             }
         }
 
@@ -128,7 +128,7 @@ namespace DBService.Services
             }
             catch (Exception ex)
             {
-                logger.LogError($"Error at DBService.Services.UserService.UpdateUser: \n {ex.Message}\nStackTrace:{ex.StackTrace}");
+                logger.LogError(ex, "Error at DBService.Services.UserService.UpdateUser");
                 return new BasicResponse()
                 {
                     Message = "Creation Error Verify the request",
@@ -142,14 +142,11 @@ namespace DBService.Services
         {
             try
             {
-                throw new Exception("Test");
-                logger.LogInformation("Test Log");
                 return await context.Users.ToListAsync();
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, "Message", 1);
-                //logger.LogError($"Error at DBService.Services.UserService.GetList: \n {ex.Message}\nStackTrace:{ex.StackTrace}");
+                logger.LogError(ex, "Error at DBService.Services.UserService.GetList");
                 return null;
             }
         }

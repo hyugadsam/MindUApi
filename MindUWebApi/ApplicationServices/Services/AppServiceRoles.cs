@@ -3,6 +3,7 @@ using DBService.Entities;
 using DBService.Interfaces;
 using DBService.Services;
 using Dtos.Dtos;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,11 +17,10 @@ namespace ApplicationServices.Services
         private readonly IMapper mapper;
         private readonly IRoleService rolService;
 
-        public AppServiceRoles(MindUContext context, IMapper mapper)
+        public AppServiceRoles(MindUContext context, IMapper mapper, ILogger<RolesService> logger)
         {
-            //this.context = context;
             this.mapper = mapper;
-            rolService = new RolesService(context);
+            rolService = new RolesService(context, logger);
         }
 
         public async Task<List<RoleDto>> GetRoles()
