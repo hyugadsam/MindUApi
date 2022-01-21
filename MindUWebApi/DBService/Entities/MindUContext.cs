@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -22,6 +22,7 @@ namespace DBService.Entities
         public virtual DbSet<Collaborators> Collaborators { get; set; }
         public virtual DbSet<CollaboratorsTechnologies> CollaboratorsTechnologies { get; set; }
         public virtual DbSet<Levels> Levels { get; set; }
+        public virtual DbSet<Logs> Logs { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<Technologies> Technologies { get; set; }
         public virtual DbSet<Users> Users { get; set; }
@@ -56,7 +57,7 @@ namespace DBService.Entities
                 entity.HasOne(d => d.Level)
                     .WithMany(p => p.Collaborators)
                     .HasForeignKey(d => d.Levelid)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_Collaborators_Levels");
             });
 
@@ -69,13 +70,11 @@ namespace DBService.Entities
                 entity.HasOne(d => d.Collaborator)
                     .WithMany(p => p.CollaboratorsTechnologies)
                     .HasForeignKey(d => d.Collaboratorid)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CollaboratorsTechnologies_Collaborators");
 
                 entity.HasOne(d => d.Technology)
                     .WithMany(p => p.CollaboratorsTechnologies)
                     .HasForeignKey(d => d.TechnologyId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CollaboratorsTechnologies_Technologies");
             });
 
@@ -86,6 +85,11 @@ namespace DBService.Entities
                 entity.Property(e => e.Description)
                     .IsRequired()
                     .HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<Logs>(entity =>
+            {
+                entity.Property(e => e.TimeStamp).HasColumnType("datetime");
             });
 
             modelBuilder.Entity<Roles>(entity =>
@@ -100,8 +104,6 @@ namespace DBService.Entities
             modelBuilder.Entity<Technologies>(entity =>
             {
                 entity.HasKey(e => e.TechnologyId);
-
-                entity.Property(e => e.TechnologyId).ValueGeneratedNever();
 
                 entity.Property(e => e.Description)
                     .IsRequired()

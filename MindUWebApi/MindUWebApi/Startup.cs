@@ -64,6 +64,10 @@ namespace MindUWebApi
             services.AddAutoMapper(typeof(AutoMapperProfiles));
             services.AddTransient<AppServiceRoles>();
             services.AddTransient<AppServiceUsers>();
+            services.AddTransient<AppServiceTechnologies>();
+            services.AddTransient<AppServiceLevels>();
+            services.AddTransient<AppServiceCollaborators>();
+
             //services.AddResponseCaching();
             //Identificar a los usuarios
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>

@@ -86,7 +86,7 @@ namespace DBService.Services
             try
             {
                 var userDb = await ExistUser(credentials.Email);
-                if (userDb == null || !userDb.IsActive) return new DBService.Models.LoginResponse() { Message = "User dosent exist", Code = 400 };
+                if (userDb == null || !userDb.IsActive.GetValueOrDefault()) return new DBService.Models.LoginResponse() { Message = "User dosent exist", Code = 400 };
 
                 if (userDb.Password.Equals(Hash.HashPasword(credentials.Password, userDb.Salt)))
                     return new DBService.Models.LoginResponse() { Code = 200, Message = "User identified success", User = userDb };

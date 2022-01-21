@@ -1,0 +1,18 @@
+﻿using DBService.Entities;
+using Dtos.Responses;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace DBService.Interfaces
+{
+    public interface ICollaboratorsService
+    {
+        Task<BasicResponse> Create(Collaborators obj);
+        Task<BasicResponse> Delete(int CollaboratorId);
+        Task<List<Collaborators>> GetList();
+        Task<Collaborators> Get(int CollaboratorId);
+        Task<BasicResponse> Update(Collaborators obj);
+
+
+    }
+}

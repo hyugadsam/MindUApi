@@ -3,6 +3,7 @@ using Dtos.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+//using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace MindUWebApi.Controllers
@@ -41,6 +42,9 @@ namespace MindUWebApi.Controllers
         [Authorize(Policy = "UserPolicity")]
         public async Task<ActionResult<List<RoleDto>>> Get4()
         {
+            //Get the token info
+            //var identity = HttpContext.User.Identity as ClaimsIdentity;
+            //IEnumerable<Claim> claims = identity.Claims
             return Ok(await appService.GetRoles());
         }
 

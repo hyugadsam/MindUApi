@@ -17,7 +17,7 @@ namespace DBService.Entities
         public int CollaboratorId { get; set; }
         public string FullName { get; set; }
         public string TimeZone { get; set; }
-        public int Levelid { get; set; }
+        public int? Levelid { get; set; }
         public bool IsGraduated { get; set; }
         public bool? IsActive { get; set; }
 
