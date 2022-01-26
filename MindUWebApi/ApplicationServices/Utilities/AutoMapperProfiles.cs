@@ -68,7 +68,7 @@ namespace ApplicationServices.Utilities
         private List<CollaboratorsTechnologies> MapCollaboratorTechnologiesUpdate(UpdateCollaboratorRequest request, Collaborators collaborators)
         {
             var result = new List<CollaboratorsTechnologies>();
-            if (request.Technologies?.Count == 0)
+            if (request.Technologies == null || request.Technologies?.Count == 0)
                 return result;
 
             foreach (var item in request.Technologies)
@@ -142,7 +142,7 @@ namespace ApplicationServices.Utilities
         private List<CollaboratorsTechnologies> MapCollaboratorTechnologiesRequest(NewCollaboratorRequest request, Collaborators collaborators)
         {
             var result = new List<CollaboratorsTechnologies>();
-            if (request.Technologies?.Count == 0)
+            if (request.Technologies == null || request.Technologies?.Count == 0)
                 return result;
 
             foreach (var item in request.Technologies)

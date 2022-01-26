@@ -20,18 +20,18 @@ namespace DBService.Services
             this.logger = logger;
         }
 
-        public async Task<BasicResponse> Create(Levels obj)
+        public async Task<BasicCreateResponse> Create(Levels obj)
         {
             try
             {
                 context.Levels.Add(obj);
                 await context.SaveChangesAsync();
-                return new BasicResponse { Code = 200, Message = "Save Success" };
+                return new BasicCreateResponse { Code = 200, Message = "Save Success",  Id = obj.LevelId};
             }
             catch (Exception ex)
             {
                 logger.LogError(ex, "Error in DBService.Services.LevelsService.Create");
-                return new BasicResponse { Code = 500, Message = "Internal eroror creating new Level" };
+                return new BasicCreateResponse { Code = 500, Message = "Internal eroror creating new Level" };
             }
         }
 

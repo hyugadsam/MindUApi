@@ -8,7 +8,7 @@ namespace DBService.Interfaces
 {
     public interface IUserService
     {
-        Task<BasicResponse> CreateUser(Users user);
+        Task<BasicCreateResponse> CreateUser(Users user);
         Task<BasicResponse> UpdateUser(Users user);
         Task<BasicResponse> DeactivateUser(string email);
         Task<Models.LoginResponse> IdentifyUser(LoginRequest credentials);

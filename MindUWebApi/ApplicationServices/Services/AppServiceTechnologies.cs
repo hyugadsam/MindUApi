@@ -21,11 +21,11 @@ namespace ApplicationServices.Services
             this.mapper = mapper;
         }
 
-        public async Task<BasicResponse> CreateTechnology(string description)
+        public async Task<BasicCreateResponse> CreateTechnology(string description)
         {
             if (string.IsNullOrEmpty(description))
             {
-                return new BasicResponse { Code= 400, Message = "Description is required" };
+                return new BasicCreateResponse { Code= 400, Message = "Description is required" };
             }
 
             var data = new Technologies() { Description = description };

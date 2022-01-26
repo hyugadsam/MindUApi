@@ -6,7 +6,7 @@ namespace DBService.Interfaces
 {
     public interface IGenericService<T>
     {
-        Task<BasicResponse> Create(T obj);
+        Task<BasicCreateResponse> Create(T obj);
         Task<BasicResponse> Update(T obj);
         Task<BasicResponse> Delete(int Id);
         Task<List<T>> GetList();

@@ -23,7 +23,7 @@ namespace ApplicationServices.Services
         }
 
 
-        public async Task<BasicResponse> Create(NewCollaboratorRequest obj)
+        public async Task<BasicCreateResponse> Create(NewCollaboratorRequest obj)
         {
             var data = mapper.Map<Collaborators>(obj);
             return await service.Create(data);
@@ -50,6 +50,16 @@ namespace ApplicationServices.Services
         {
             var data = mapper.Map<Collaborators>(obj);
             return await service.Update(data);
+        }
+
+        public async Task<BasicResponse> DeactivateCollaborator(int CollaboratorId)
+        {
+            return await service.DeactivateCollaborator(CollaboratorId);
+        }
+
+        public async Task<BasicResponse> GraduateCollaborator(int CollaboratorId)
+        {
+            return await service.GraduateCollaborator(CollaboratorId);
         }
 
 

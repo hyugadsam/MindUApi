@@ -23,27 +23,28 @@ namespace DBService.Services
             this.logger = logger;
         }
 
-        public async Task<BasicResponse> CreateUser(Users user)
+        public async Task<BasicCreateResponse> CreateUser(Users user)
         {
             try
             {
                 var exist = await context.Users.AnyAsync(u => u.Email == user.Email);
-                if (exist) return new BasicResponse() { Message = "User al ready exist", Code = 400 };
+                if (exist) return new BasicCreateResponse() { Message = "User al ready exist", Code = 400 };
 
                 user.Salt = Hash.GetNewSalt();  //Genera la cadena de encryptado
                 user.Password = Hash.HashPasword(user.Password, user.Salt); //Encrypta el password
                 context.Users.Add(user);
                 await context.SaveChangesAsync();
-                return new BasicResponse()
+                return new BasicCreateResponse()
                 {
                     Message = "Created Success",
-                    Code = 200
+                    Code = 200,
+                    Id = user.UserId
                 };
             }
             catch (Exception ex)
             {
                 logger.LogError(ex, "Error at DBService.Services.UserService.CreateUser");
-                return new BasicResponse()
+                return new BasicCreateResponse()
                 {
                     Message = "Creation Error Verify the request",
                     Code = 500

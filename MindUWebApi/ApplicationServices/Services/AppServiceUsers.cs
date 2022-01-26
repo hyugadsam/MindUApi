@@ -22,7 +22,7 @@ namespace ApplicationServices.Services
             this.mapper = mapper;
         }
 
-        public async Task<BasicResponse> CreateUser(NewUserRequest user)
+        public async Task<BasicCreateResponse> CreateUser(NewUserRequest user)
         {
             var userDb = mapper.Map<Users>(user);
             return await service.CreateUser(userDb);

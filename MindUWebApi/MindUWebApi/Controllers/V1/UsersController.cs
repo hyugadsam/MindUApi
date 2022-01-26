@@ -4,6 +4,7 @@ using Dtos.Dtos;
 using Dtos.Enums;
 using Dtos.Request;
 using Dtos.Responses;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -15,17 +16,16 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MindUWebApi.Controllers
+namespace MindUWebApi.Controllers.V1
 {
     [ApiController]
-    [Route("api/Users")]
-    [Authorize]
+    [Route("api/v1/Users")]
     public class UsersController : ControllerBase
     {
         private readonly AppServiceUsers service;
         private readonly IConfiguration configuration;
 
-        public UsersController(AppServiceUsers service, IConfiguration configuration )
+        public UsersController(AppServiceUsers service, IConfiguration configuration)
         {
             this.service = service;
             this.configuration = configuration;
@@ -33,36 +33,54 @@ namespace MindUWebApi.Controllers
 
         [HttpPost]
         [Route("CreateUser")]
-        [Authorize(Policy = "SuperAdminPolicity")]
-        public async Task<ActionResult<BasicResponse>> NewUser(NewUserRequest request)
+        [Authorize(Policy = "SuperAdminPolicity", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<ActionResult<BasicCreateResponse>> NewUser(NewUserRequest request)
         {
             var result = await service.CreateUser(request);
-            return StatusCode(result.Code, result);
+            if (result.Code != 200)
+            {
+                return StatusCode(result.Code, result);
+            }
+            return result;
         }
 
         [HttpPost]
-        [Authorize(Policy = "AdminPolicity")]
+        [Authorize(Policy = "AdminPolicity", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [Route("CreateNormalUser")]
         public async Task<ActionResult<BasicResponse>> NewBasicUser(NewBasicUserRequest request)
         {
             var result = await service.CreateBasicUser(request);
-            return StatusCode(result.Code, result);
+            if (result.Code != 200)
+            {
+                return StatusCode(result.Code, result);
+            }
+            return result;
         }
 
         [HttpPut]
         [Route("UpdateUser")]
+        [Authorize(Policy = "AdminPolicity", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult<BasicResponse>> UpdateUser(UpdateUserRequest user)
         {
             var result = await service.UpdateUser(user);
-            return StatusCode(result.Code, result);
+            if (result.Code != 200)
+            {
+                return StatusCode(result.Code, result);
+            }
+            return result;
         }
 
         [HttpPut]
+        [Authorize(Policy = "AdminPolicity", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [Route("Deactivate")]
-        public async Task<ActionResult<BasicResponse>> DeactivateUser(string Email)
+        public async Task<ActionResult<BasicResponse>> DeactivateUser([FromBody] string Email)
         {
             var result = await service.DeactivateUser(Email);
-            return StatusCode(result.Code, result);
+            if (result.Code != 200)
+            {
+                return StatusCode(result.Code, result);
+            }
+            return result;
         }
 
         [HttpPost]
@@ -76,15 +94,16 @@ namespace MindUWebApi.Controllers
                 return StatusCode(result.Code, new Dtos.Responses.LoginResponse { Code = result.Code, Message= result.Message });
             }
             else
-                return Ok(CreateToken(result));
+                return CreateToken(result);
         }
 
         [HttpGet]
+        [Authorize(Policy = "AdminPolicity", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [Route("GetAll")]
         public async Task<ActionResult<List<UserDto>>> GetAllUsers()
         {
             var result = await service.GetAllUsers();
-            return Ok(result);
+            return result;
         }
 
         private Dtos.Responses.LoginResponse CreateToken(UserValidationResponse user)

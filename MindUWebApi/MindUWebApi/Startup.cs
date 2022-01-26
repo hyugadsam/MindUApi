@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using MindUWebApi.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -38,6 +39,8 @@ namespace MindUWebApi
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApiMindU", Version = "v1" });
+                c.SwaggerDoc("v2", new OpenApiInfo { Title = "WebApiMindU", Version = "v2" });
+
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -69,6 +72,23 @@ namespace MindUWebApi
             services.AddTransient<AppServiceCollaborators>();
 
             //services.AddResponseCaching();
+            ConfigureAuth(services);
+            services.AddControllers(options =>
+            {
+                options.Conventions.Add(new SwaggerAgrupation());
+            });
+            services.AddCors(opciones =>
+            {
+                opciones.AddDefaultPolicy(builder =>
+                {
+                    //builder.WithOrigins("").AllowAnyMethod().AllowAnyHeader();    //Para especificar origen
+                    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                });
+            });
+        }
+
+        protected virtual void ConfigureAuth(IServiceCollection services)
+        {
             //Identificar a los usuarios
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
@@ -91,14 +111,13 @@ namespace MindUWebApi
                 });
                 options.AddPolicy("AdminPolicity", policy =>
                 {
-                    policy.RequireClaim("Role", new string [] { "Admin", "SuperAdmin" });
+                    policy.RequireClaim("Role", new string[] { "Admin", "SuperAdmin" });
                 });
                 options.AddPolicy("UserPolicity", policy =>
                 {
                     policy.RequireClaim("Role", new string[] { "User", "Admin", "SuperAdmin" });
                 });
             });
-            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -110,7 +129,11 @@ namespace MindUWebApi
             }
 
             app.UseSwagger();
-            app.UseSwaggerUI();
+            app.UseSwaggerUI( c=>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApiMindU V1");
+                c.SwaggerEndpoint("/swagger/v2/swagger.json", "WebApiMindU V2");
+            });
 
             app.UseHttpsRedirection();
 

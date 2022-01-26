@@ -7,11 +7,13 @@ namespace DBService.Interfaces
 {
     public interface ICollaboratorsService
     {
-        Task<BasicResponse> Create(Collaborators obj);
+        Task<BasicCreateResponse> Create(Collaborators obj);
         Task<BasicResponse> Delete(int CollaboratorId);
         Task<List<Collaborators>> GetList();
         Task<Collaborators> Get(int CollaboratorId);
         Task<BasicResponse> Update(Collaborators obj);
+        Task<BasicResponse> DeactivateCollaborator(int CollaboratorId);
+        Task<BasicResponse> GraduateCollaborator(int CollaboratorId);
 
 
     }

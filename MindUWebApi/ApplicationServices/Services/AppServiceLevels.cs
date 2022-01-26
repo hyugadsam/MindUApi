@@ -21,11 +21,11 @@ namespace ApplicationServices.Services
             this.mapper = mapper;
         }
 
-        public async Task<BasicResponse> CreateLevel(string description)
+        public async Task<BasicCreateResponse> CreateLevel(string description)
         {
             if (string.IsNullOrEmpty(description))
             {
-                return new BasicResponse { Code= 400, Message = "Description is required" };
+                return new BasicCreateResponse { Code= 400, Message = "Description is required" };
             }
 
             var data = new Levels() { Description = description };

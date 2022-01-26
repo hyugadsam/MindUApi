@@ -20,18 +20,18 @@ namespace DBService.Services
             this.logger = logger;
         }
 
-        public async Task<BasicResponse> Create(Technologies obj)
+        public async Task<BasicCreateResponse> Create(Technologies obj)
         {
             try
             {
                 context.Technologies.Add(obj);
                 await context.SaveChangesAsync();
-                return new BasicResponse { Code = 200, Message = "Save Success" };
+                return new BasicCreateResponse { Code = 200, Message = "Save Success", Id = obj.TechnologyId };
             }
             catch (Exception ex)
             {
                 logger.LogError(ex, "Error in DBService.Services.TechnologiesService.CreateTechnology");
-                return new BasicResponse { Code = 500, Message = "Internal eroror creating new Technology" };
+                return new BasicCreateResponse { Code = 500, Message = "Internal eroror creating new Technology" };
             }
         }
 
