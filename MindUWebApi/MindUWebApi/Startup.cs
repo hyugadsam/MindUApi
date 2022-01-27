@@ -13,6 +13,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
 using MindUWebApi.Utilities;
+using MindUWebApi.Filtros;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Identity;
+using Serilog;
 
 namespace MindUWebApi
 {
@@ -75,8 +77,10 @@ namespace MindUWebApi
             ConfigureAuth(services);
             services.AddControllers(options =>
             {
+                options.Filters.Add(typeof(FiltroExcepcion));
                 options.Conventions.Add(new SwaggerAgrupation());
             });
+
             services.AddCors(opciones =>
             {
                 opciones.AddDefaultPolicy(builder =>
@@ -85,6 +89,12 @@ namespace MindUWebApi
                     builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
                 });
             });
+
+            services.AddApplicationInsightsTelemetry(Configuration["ApplicationInsights:ConnectionString"]);
+            //IConfigurationRoot configuration = new ConfigurationBuilder()
+            //    .AddJsonFile("appSettings.json", optional: false, reloadOnChange: true).Build();
+            Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(Configuration).CreateLogger();
+
         }
 
         protected virtual void ConfigureAuth(IServiceCollection services)

@@ -12,9 +12,9 @@ namespace MindUWebApi
     {
         public static void Main(string[] args)
         {
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-                .AddJsonFile("appSettings.json", optional: false, reloadOnChange: true).Build();
-            Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(configuration).CreateLogger();
+            //IConfigurationRoot configuration = new ConfigurationBuilder()
+            //    .AddJsonFile("appSettings.json", optional: false, reloadOnChange: true).Build();
+            //Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(configuration).CreateLogger();
             CreateHostBuilder(args).Build().Run();
         }
 
