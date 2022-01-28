@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DBService.Entities;
 using Dtos.Dtos;
+using Dtos.Models;
 using Dtos.Request;
 using Dtos.Responses;
 using System.Collections.Generic;
@@ -62,9 +63,33 @@ namespace ApplicationServices.Utilities
             CreateMap<Levels, LevelDto>();
             #endregion
 
+            #region ApiMaps
+            CreateMap<Feature, CityInfoDto>()
+                .ForMember(destino => destino.Name, option => option.MapFrom(x => string.IsNullOrEmpty(x.place_name_es) ? x.place_name : x.place_name_es))
+                .ForMember(destino => destino.Longitude, option => option.MapFrom(y => y.geometry.coordinates[0]))
+                .ForMember(destino => destino.Latitude, option => option.MapFrom(z => z.geometry.coordinates[1]))
+                .ForMember(destino => destino.PlaceId, option => option.MapFrom(a => a.id ));
+
+            CreateMap<MapBoxResponse, CityInfoDto>()
+                .ForMember(destino => destino.Name, option => option.MapFrom(x => string.IsNullOrEmpty(x.features[0].place_name_es) ? x.features[0].place_name : x.features[0].place_name_es))
+                .ForMember(destino => destino.Longitude, option => option.MapFrom(y => y.features[0].geometry.coordinates[0]))
+                .ForMember(destino => destino.Latitude, option => option.MapFrom(z => z.features[0].geometry.coordinates[1]));
+
+            CreateMap<OpenWatherResponse, WeatherInfoDto>()
+                .ForMember(destino => destino.Weather, opt => opt.MapFrom(x => x.current.weather[0].description))
+                .ForMember(destino => destino.Currtemp, opt => opt.MapFrom(y => KelvinToCelcius(y.current.temp)))
+                .ForMember(destino => destino.Maxtemp, opt => opt.MapFrom(z => KelvinToCelcius(z.daily[0].temp.max)))
+                .ForMember(destino => destino.Mintemp, opt => opt.MapFrom(a => KelvinToCelcius(a.daily[0].temp.min)));
+            #endregion
+
         }
 
         #region Methods
+        private string KelvinToCelcius(double value)
+        {
+            return (value - 273.15).ToString("N2");
+        }
+
         private List<CollaboratorsTechnologies> MapCollaboratorTechnologiesUpdate(UpdateCollaboratorRequest request, Collaborators collaborators)
         {
             var result = new List<CollaboratorsTechnologies>();

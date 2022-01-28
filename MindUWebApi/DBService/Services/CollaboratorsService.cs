@@ -109,6 +109,7 @@ namespace DBService.Services
                 data.FullName = obj.FullName;
                 data.IsActive = obj.IsActive;
                 data.TimeZone = obj.TimeZone;
+                data.CollaboratorsTechnologies.Clear();
                 data.CollaboratorsTechnologies = obj.CollaboratorsTechnologies;
 
                 context.Entry(data).State = EntityState.Modified;
@@ -180,7 +181,7 @@ namespace DBService.Services
 
         private async Task<Collaborators> ExistsCollaborator(int CollaboratorId)
         {
-            return await context.Collaborators.FirstOrDefaultAsync(c => c.CollaboratorId == CollaboratorId);
+            return await context.Collaborators.Include(x => x.CollaboratorsTechnologies).FirstOrDefaultAsync(c => c.CollaboratorId == CollaboratorId);
         }
         
         private async Task<BasicResponse> ValidateCollaboratorsReferences(Collaborators obj)

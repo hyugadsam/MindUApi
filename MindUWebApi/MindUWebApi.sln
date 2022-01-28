@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationServices", "Appl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBService", "DBService\DBService.csproj", "{CAEAB98E-7DEB-4D4D-B297-A6D31328B3BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindUWebApi.Test", "MindUWebApi.Test\MindUWebApi.Test.csproj", "{9C73E637-4724-4C92-9602-AFFA6601205D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MindUWebApi.Test", "MindUWebApi.Test\MindUWebApi.Test.csproj", "{9C73E637-4724-4C92-9602-AFFA6601205D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiService", "ApiService\ApiService.csproj", "{28DCF75C-23CB-4FB3-9495-77AC1DA2EF66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{9C73E637-4724-4C92-9602-AFFA6601205D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C73E637-4724-4C92-9602-AFFA6601205D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C73E637-4724-4C92-9602-AFFA6601205D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28DCF75C-23CB-4FB3-9495-77AC1DA2EF66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28DCF75C-23CB-4FB3-9495-77AC1DA2EF66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28DCF75C-23CB-4FB3-9495-77AC1DA2EF66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28DCF75C-23CB-4FB3-9495-77AC1DA2EF66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ApiService\ApiService.csproj" />
     <ProjectReference Include="..\ApplicationServices\ApplicationServices.csproj" />
     <ProjectReference Include="..\DBService\DBService.csproj" />
     <ProjectReference Include="..\Dtos\Dtos.csproj" />

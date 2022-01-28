@@ -22,6 +22,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Identity;
 using Serilog;
+using Dtos.Interfaces;
+using ApiService.Services;
 
 namespace MindUWebApi
 {
@@ -66,12 +68,23 @@ namespace MindUWebApi
                     }
                 });
             });
+
             services.AddAutoMapper(typeof(AutoMapperProfiles));
+            services.AddHttpClient<IWeatherService, WeatherService>(client =>
+            {
+                client.BaseAddress = new Uri(Configuration["WeatherUrl"]);
+            });
+            services.AddHttpClient<IMapService, MapService>(client =>
+            {
+                client.BaseAddress = new Uri(Configuration["MapBoxURL"]);
+            });
+
             services.AddTransient<AppServiceRoles>();
             services.AddTransient<AppServiceUsers>();
             services.AddTransient<AppServiceTechnologies>();
             services.AddTransient<AppServiceLevels>();
             services.AddTransient<AppServiceCollaborators>();
+            services.AddTransient<AppServiceApis>();
 
             //services.AddResponseCaching();
             ConfigureAuth(services);
