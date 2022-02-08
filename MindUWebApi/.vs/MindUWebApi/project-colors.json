@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "caeab98e-7deb-4d4d-b297-a6d31328b3bd": {
+      "ProjectGuid": "caeab98e-7deb-4d4d-b297-a6d31328b3bd",
+      "DisplayName": "DBService",
+      "ColorIndex": 0
+    },
+    "5f7e5c04-73c5-47c7-937f-aacc3894fcf8": {
+      "ProjectGuid": "5f7e5c04-73c5-47c7-937f-aacc3894fcf8",
+      "DisplayName": "MindUWebApi",
+      "ColorIndex": 1
+    },
+    "15e2873e-66fc-461a-b434-879b6259d221": {
+      "ProjectGuid": "15e2873e-66fc-461a-b434-879b6259d221",
+      "DisplayName": "ApplicationServices",
+      "ColorIndex": 2
+    },
+    "f9a694e4-afe4-4e5c-b9ce-1bc397520967": {
+      "ProjectGuid": "f9a694e4-afe4-4e5c-b9ce-1bc397520967",
+      "DisplayName": "Dtos",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "9c73e637-4724-4c92-9602-affa6601205d": {
+      "ProjectGuid": "9c73e637-4724-4c92-9602-affa6601205d",
+      "DisplayName": "MindUWebApi.Test",
+      "ColorIndex": 4
+    },
+    "28dcf75c-23cb-4fb3-9495-77ac1da2ef66": {
+      "ProjectGuid": "28dcf75c-23cb-4fb3-9495-77ac1da2ef66",
+      "DisplayName": "ApiService",
+      "ColorIndex": 5
+    }
+  },
+  "NextColorIndex": 6
+}

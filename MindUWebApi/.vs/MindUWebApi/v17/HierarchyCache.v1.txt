@@ -1,0 +1,365 @@
+﻿++Solution 'MindUWebApi' ‎(5 of 5 projects)
+++DBService
+i:{00000000-0000-0000-0000-000000000000}:DBService
+i:{15e2873e-66fc-461a-b434-879b6259d221}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\bin\debug\netcoreapp3.1\dbservice.dll
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\dbservice.csproj
+++Dependencies
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:>1844
+i:{9c73e637-4724-4c92-9602-affa6601205d}:>3264
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:>1845
+i:{15e2873e-66fc-461a-b434-879b6259d221}:>1846
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:>3265
+i:{28dcf75c-23cb-4fb3-9495-77ac1da2ef66}:>8262
+++Entities
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\entities\
+++Interfaces
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\interfaces\
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\interfaces\
+++ICollaboratorsService.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\interfaces\icollaboratorsservice.cs
+++IGenericService.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\interfaces\igenericservice.cs
+++IRoleService.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\interfaces\iroleservice.cs
+++IUserService.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\interfaces\iuserservice.cs
+++Models
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\models\
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\models\
+++Security
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\security\
+++Services
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\services\
+i:{15e2873e-66fc-461a-b434-879b6259d221}:c:\users\sam\documents\repos\minduapi\minduwebapi\applicationservices\services\
+i:{28dcf75c-23cb-4fb3-9495-77ac1da2ef66}:c:\users\sam\documents\repos\minduapi\minduwebapi\apiservice\services\
+++CollaboratorsService.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\services\collaboratorsservice.cs
+++LevelsService.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\services\levelsservice.cs
+++RolesService.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\services\rolesservice.cs
+++TechnologiesService.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\services\technologiesservice.cs
+++UserService.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\services\userservice.cs
+++Utils
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\utils\
+++Analyzers
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:analyzers
+i:{9c73e637-4724-4c92-9602-affa6601205d}:analyzers
+i:{15e2873e-66fc-461a-b434-879b6259d221}:analyzers
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:analyzers
+++Frameworks
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:frameworks
+i:{9c73e637-4724-4c92-9602-affa6601205d}:frameworks
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:frameworks
+i:{15e2873e-66fc-461a-b434-879b6259d221}:frameworks
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:frameworks
+i:{28dcf75c-23cb-4fb3-9495-77ac1da2ef66}:frameworks
+++Packages
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:packages
+i:{9c73e637-4724-4c92-9602-affa6601205d}:packages
+i:{15e2873e-66fc-461a-b434-879b6259d221}:packages
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:packages
+i:{28dcf75c-23cb-4fb3-9495-77ac1da2ef66}:packages
+++Projects
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:projects
+i:{9c73e637-4724-4c92-9602-affa6601205d}:projects
+i:{15e2873e-66fc-461a-b434-879b6259d221}:projects
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:projects
+i:{28dcf75c-23cb-4fb3-9495-77ac1da2ef66}:projects
+++Collaborators.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\entities\collaborators.cs
+++CollaboratorsTechnologies.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\entities\collaboratorstechnologies.cs
+++Levels.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\entities\levels.cs
+++Logs.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\entities\logs.cs
+++MindUContext.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\entities\minducontext.cs
+++Roles.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\entities\roles.cs
+++Technologies.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\entities\technologies.cs
+++Users.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\entities\users.cs
+++LoginResponse.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\models\loginresponse.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\responses\loginresponse.cs
+++Hash.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\security\hash.cs
+++XmlUtility.cs
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\utils\xmlutility.cs
+++Microsoft.EntityFrameworkCore.Analyzers
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\.nuget\packages\microsoft.entityframeworkcore.analyzers\3.1.22\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\.nuget\packages\microsoft.entityframeworkcore.analyzers\3.1.22\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{15e2873e-66fc-461a-b434-879b6259d221}:c:\users\sam\.nuget\packages\microsoft.entityframeworkcore.analyzers\3.1.22\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\.nuget\packages\microsoft.entityframeworkcore.analyzers\3.1.22\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+++Microsoft.NETCore.App
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dbservice\microsoft.netcore.app
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\microsoft.netcore.app
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\microsoft.netcore.app
+i:{15e2873e-66fc-461a-b434-879b6259d221}:c:\users\sam\documents\repos\minduapi\minduwebapi\applicationservices\microsoft.netcore.app
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\microsoft.netcore.app
+i:{28dcf75c-23cb-4fb3-9495-77ac1da2ef66}:c:\users\sam\documents\repos\minduapi\minduwebapi\apiservice\microsoft.netcore.app
+++Microsoft.EntityFrameworkCore.Design (3.1.22)
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:>3291
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:>3319
+++Microsoft.EntityFrameworkCore.SqlServer (3.1.22)
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:>3287
+++Microsoft.EntityFrameworkCore.Tools (3.1.22)
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:>3294
+++Dtos
+i:{caeab98e-7deb-4d4d-b297-a6d31328b3bd}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\bin\debug\netcoreapp3.1\dtos.dll
+i:{00000000-0000-0000-0000-000000000000}:Dtos
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\dtos\
+i:{15e2873e-66fc-461a-b434-879b6259d221}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\bin\debug\netcoreapp3.1\dtos.dll
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\dtos.csproj
+i:{28dcf75c-23cb-4fb3-9495-77ac1da2ef66}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\bin\debug\netcoreapp3.1\dtos.dll
+++MindUWebApi.Test
+i:{00000000-0000-0000-0000-000000000000}:MindUWebApi.Test
+++Connected Services 
+i:{9c73e637-4724-4c92-9602-affa6601205d}:>3266
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:>3267
+++Properties
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\properties\
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\properties\
+++PruebasIntegracion
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\pruebasintegracion\
+++CollaboratorsControllerTest.cs
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\pruebasintegracion\collaboratorscontrollertest.cs
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\pruebasunitarias\collaboratorscontrollertest.cs
+++UsersControllerTest.cs
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\pruebasintegracion\userscontrollertest.cs
+++PruebasUnitarias
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\pruebasunitarias\
+++LevelsControllerTest.cs
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\pruebasunitarias\levelscontrollertest.cs
+++RolesControllerTest.cs
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\pruebasunitarias\rolescontrollertest.cs
+++TechnologyControllerTest.cs
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\pruebasunitarias\technologycontrollertest.cs
+++Utilidades
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\utilidades\
+++AllowAnonymousHandler.cs
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\utilidades\allowanonymoushandler.cs
+++FakeUserFilter.cs
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\utilidades\fakeuserfilter.cs
+++appsettings.json
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\appsettings.json
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\appsettings.json
+++BasePruebas.cs
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\basepruebas.cs
+++Converter.cs
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\converter.cs
+++No service dependencies discovered
+i:{9c73e637-4724-4c92-9602-affa6601205d}:>3268
+++launchSettings.json
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\properties\launchsettings.json
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\properties\launchsettings.json
+++Microsoft.AspNetCore.Analyzers
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\program files\dotnet\sdk\6.0.101\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.AspNetCore.App
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi.test\microsoft.aspnetcore.app
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\microsoft.aspnetcore.app
+++coverlet.collector (3.1.0)
+i:{9c73e637-4724-4c92-9602-affa6601205d}:>3301
+++Microsoft.AspNetCore.Mvc.Testing (3.1.22)
+i:{9c73e637-4724-4c92-9602-affa6601205d}:>3336
+++Microsoft.EntityFrameworkCore.InMemory (3.1.22)
+i:{9c73e637-4724-4c92-9602-affa6601205d}:>3298
+++Microsoft.NET.Test.Sdk (17.0.0)
+i:{9c73e637-4724-4c92-9602-affa6601205d}:>3292
+++Moq (4.16.1)
+i:{9c73e637-4724-4c92-9602-affa6601205d}:>3300
+++MSTest.TestAdapter (2.2.8)
+i:{9c73e637-4724-4c92-9602-affa6601205d}:>3302
+++MSTest.TestFramework (2.2.8)
+i:{9c73e637-4724-4c92-9602-affa6601205d}:>3289
+++MindUWebApi
+i:{9c73e637-4724-4c92-9602-affa6601205d}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\bin\debug\netcoreapp3.1\minduwebapi.dll
+i:{00000000-0000-0000-0000-000000000000}:MindUWebApi
+++CustomValidations
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\customvalidations\
+++Enums
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\enums\
+++Request
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\request\
+++Responses
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\responses\
+++EmptyOrMinLength.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\customvalidations\emptyorminlength.cs
+++StringListValidation.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\customvalidations\stringlistvalidation.cs
+++CollaboratorBase.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\dtos\collaboratorbase.cs
+++CollaboratorDto.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\dtos\collaboratordto.cs
+++CollaboratorFullDto.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\dtos\collaboratorfulldto.cs
+++CollaboratorTechnologiesDescriptionDto.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\dtos\collaboratortechnologiesdescriptiondto.cs
+++CollaboratorTechnologiesDto.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\dtos\collaboratortechnologiesdto.cs
+++LevelDto.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\dtos\leveldto.cs
+++RoleDto.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\dtos\roledto.cs
+++TechnologyDto.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\dtos\technologydto.cs
+++UserDto.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\dtos\userdto.cs
+++EnumRoles.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\enums\enumroles.cs
+++LoginRequest.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\request\loginrequest.cs
+++NewBasicUserRequest.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\request\newbasicuserrequest.cs
+++NewCollaboratorRequest.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\request\newcollaboratorrequest.cs
+++NewUserRequest.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\request\newuserrequest.cs
+++UpdateCollaboratorRequest.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\request\updatecollaboratorrequest.cs
+++UpdateUserRequest.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\request\updateuserrequest.cs
+++BasicCreateResponse.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\responses\basiccreateresponse.cs
+++BasicResponse.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\responses\basicresponse.cs
+++UserValidationResponse.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\responses\uservalidationresponse.cs
+++ApplicationServices
+i:{00000000-0000-0000-0000-000000000000}:ApplicationServices
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\applicationservices\applicationservices.csproj
+++Utilities
+i:{15e2873e-66fc-461a-b434-879b6259d221}:c:\users\sam\documents\repos\minduapi\minduwebapi\applicationservices\utilities\
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\utilities\
+++AppServiceCollaborators.cs
+i:{15e2873e-66fc-461a-b434-879b6259d221}:c:\users\sam\documents\repos\minduapi\minduwebapi\applicationservices\services\appservicecollaborators.cs
+++AppServiceLevels.cs
+i:{15e2873e-66fc-461a-b434-879b6259d221}:c:\users\sam\documents\repos\minduapi\minduwebapi\applicationservices\services\appservicelevels.cs
+++AppServiceRoles.cs
+i:{15e2873e-66fc-461a-b434-879b6259d221}:c:\users\sam\documents\repos\minduapi\minduwebapi\applicationservices\services\appserviceroles.cs
+++AppServiceTechnologies.cs
+i:{15e2873e-66fc-461a-b434-879b6259d221}:c:\users\sam\documents\repos\minduapi\minduwebapi\applicationservices\services\appservicetechnologies.cs
+++AppServiceUsers.cs
+i:{15e2873e-66fc-461a-b434-879b6259d221}:c:\users\sam\documents\repos\minduapi\minduwebapi\applicationservices\services\appserviceusers.cs
+++AutoMapperProfiles.cs
+i:{15e2873e-66fc-461a-b434-879b6259d221}:c:\users\sam\documents\repos\minduapi\minduwebapi\applicationservices\utilities\automapperprofiles.cs
+++AutoMapper.Extensions.Microsoft.DependencyInjection (11.0.0)
+i:{15e2873e-66fc-461a-b434-879b6259d221}:>3283
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:>3318
+++Controllers
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\controllers\
+++V1
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\controllers\v1\
+++CollaboratorsController.cs
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\controllers\v1\collaboratorscontroller.cs
+++LevelsController.cs
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\controllers\v1\levelscontroller.cs
+++RolesController.cs
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\controllers\v1\rolescontroller.cs
+++TechnologiesController.cs
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\controllers\v1\technologiescontroller.cs
+++UsersController.cs
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\controllers\v1\userscontroller.cs
+++V2
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\controllers\v2\
+++ValuesController.cs
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\controllers\v2\valuescontroller.cs
+++SwaggerAgrupation.cs
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\utilities\swaggeragrupation.cs
+++Program.cs
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\program.cs
+++Startup.cs
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\startup.cs
+++SQL Server Database (ConnectionStrings:Default)
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:>3333
+++PublishProfiles
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\properties\publishprofiles\
+++ServiceDependencies
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\properties\servicedependencies\
+++serviceDependencies.json
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\properties\servicedependencies.json
+++appsettings.Development.json
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\appsettings.development.json
+++Dependency mssql1 is missing and needs to be configured for current profile.
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:>3334
+++Microsoft.AspNetCore.Authentication.JwtBearer (3.1.22)
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:>3323
+++Microsoft.EntityFrameworkCore (3.1.22)
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:>3317
+++Serilog.AspNetCore (4.1.0)
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:>3321
+++Serilog.Settings.Configuration (3.3.0)
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:>3324
+++Serilog.Sinks.MSSqlServer (5.6.1)
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:>3322
+++Swashbuckle.AspNetCore (6.2.3)
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:>3320
+++MindUWebApi01242022 - Web Deploy.pubxml
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\properties\publishprofiles\minduwebapi01242022 - web deploy.pubxml
+++MindUWebApi01242022 - Web Deploy
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\properties\servicedependencies\minduwebapi01242022 - web deploy\
+++serviceDependencies.MindUWebApi01242022 - Web Deploy.json
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\properties\servicedependencies.minduwebapi01242022 - web deploy.json
+++mssql1.arm.json
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\properties\servicedependencies\minduwebapi01242022 - web deploy\mssql1.arm.json
+++profile.arm.json
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\properties\servicedependencies\minduwebapi01242022 - web deploy\profile.arm.json
+++NewFolder
+++Filtros
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\filtros\
+++FiltroExcepcion.cs
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\filtros\filtroexcepcion.cs
+++Microsoft.ApplicationInsights.AspNetCore (2.20.0)
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:>4867
+++Solution 'MindUWebApi' ‎(6 of 6 projects)
+i:{00000000-0000-0000-0000-000000000000}:MindUWebApi.sln
+++ApiService
+i:{00000000-0000-0000-0000-000000000000}:ApiService
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\apiservice\apiservice.csproj
+++Class1.cs
+++CityInfo.cs
+++MapBoxResponse.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\models\mapboxresponse.cs
+++OpenwWatherResponse.cs
+++GetCitiesRequest.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\request\getcitiesrequest.cs
+++MapService.cs
+i:{28dcf75c-23cb-4fb3-9495-77ac1da2ef66}:c:\users\sam\documents\repos\minduapi\minduwebapi\apiservice\services\mapservice.cs
+++Microsoft.Extensions.Configuration.Abstractions (6.0.0)
+i:{28dcf75c-23cb-4fb3-9495-77ac1da2ef66}:>8324
+++Newtonsoft.Json (13.0.1)
+i:{28dcf75c-23cb-4fb3-9495-77ac1da2ef66}:>8325
+++MapService - Copy.cs
+++WeatherService.cs
+i:{28dcf75c-23cb-4fb3-9495-77ac1da2ef66}:c:\users\sam\documents\repos\minduapi\minduwebapi\apiservice\services\weatherservice.cs
+++OpenWatherResponse.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\models\openwatherresponse.cs
+++Interface1.cs
+++IWeatherService.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\interfaces\interface1.cs
+++IMapService.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\interfaces\interface1.cs
+++AppServiceApis.cs
+i:{15e2873e-66fc-461a-b434-879b6259d221}:c:\users\sam\documents\repos\minduapi\minduwebapi\applicationservices\services\appserviceapis.cs
+++ExternalServicesController.cs
+i:{5f7e5c04-73c5-47c7-937f-aacc3894fcf8}:c:\users\sam\documents\repos\minduapi\minduwebapi\minduwebapi\controllers\v2\externalservicescontroller.cs
+++GetWeatherRequest.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\request\getweatherrequest.cs
+++CityInfoDto.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\responses\cityinfodto.cs
+++WeatherInfoDto.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\responses\weatherinfodto.cs
+++CityWithWeather.cs
+i:{f9a694e4-afe4-4e5c-b9ce-1bc397520967}:c:\users\sam\documents\repos\minduapi\minduwebapi\dtos\responses\citywithweather.cs
