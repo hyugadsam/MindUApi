@@ -30,7 +30,12 @@
       "ProjectGuid": "9c73e637-4724-4c92-9602-affa6601205d",
       "DisplayName": "MindUWebApi.Test",
       "ColorIndex": 4
+    },
+    "28dcf75c-23cb-4fb3-9495-77ac1da2ef66": {
+      "ProjectGuid": "28dcf75c-23cb-4fb3-9495-77ac1da2ef66",
+      "DisplayName": "ApiService",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 6
 }

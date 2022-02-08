@@ -24,6 +24,7 @@ using Microsoft.AspNetCore.Identity;
 using Serilog;
 using Dtos.Interfaces;
 using ApiService.Services;
+using AutoMapper;
 
 namespace MindUWebApi
 {

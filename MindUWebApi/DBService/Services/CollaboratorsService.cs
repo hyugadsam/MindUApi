@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Text;
 using System.Linq;
+using Dtos.Dtos;
+using DBService.Utils;
 
 namespace DBService.Services
 {
@@ -62,11 +64,12 @@ namespace DBService.Services
             }
         }
 
-        public async Task<List<Collaborators>> GetList()
+        public async Task<List<Collaborators>> GetList(PaginacionDTO paginacion)
         {
             try
             {
-                return await context.Collaborators.Include(l => l.Level).ToListAsync();
+                var query = context.Collaborators.AsQueryable();
+                return await query.Paginar(paginacion).Include(l => l.Level).ToListAsync();
             }
             catch (Exception ex)
             {

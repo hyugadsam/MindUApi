@@ -78,7 +78,7 @@ namespace MindUWebApi.Test.PruebasUnitarias
 
             //Prueba
             var controller = new CollaboratorsController(new AppServiceCollaborators(context2, logger, mapper));
-            var respuesta = await controller.GetList();
+            var respuesta = await controller.GetList(new Dtos.Dtos.PaginacionDTO());
 
             //Verificar
             var collaborators = respuesta.Value;

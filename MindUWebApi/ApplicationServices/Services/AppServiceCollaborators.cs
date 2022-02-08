@@ -34,9 +34,9 @@ namespace ApplicationServices.Services
             return await service.Delete(CollaboratorId);
         }
 
-        public async Task<List<CollaboratorDto>> GetList()
+        public async Task<List<CollaboratorDto>> GetList(PaginacionDTO paginacion)
         {
-            var data = await service.GetList();
+            var data = await service.GetList(paginacion);
             return mapper.Map<List<CollaboratorDto>>(data);
         }
 

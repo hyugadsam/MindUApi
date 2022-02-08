@@ -50,9 +50,9 @@ namespace MindUWebApi.Controllers.V1
         [Route("Get")]
         [HttpGet]
         [Authorize(Policy = "AdminPolicity", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<ActionResult<List<CollaboratorDto>>> GetList()
+        public async Task<ActionResult<List<CollaboratorDto>>> GetList([FromQuery] PaginacionDTO paginacion)
         {
-            return await service.GetList();
+            return await service.GetList(paginacion);
         }
 
         [Route("Get/{CollaboratorId:int}")]
