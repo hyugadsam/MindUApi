@@ -11,7 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  proyecto: '**/MindUWebApi.csproj'
+  proyecto: MindUWebApi/MindUWebApi/MindUWebApi.csproj'
 
 steps:
 
