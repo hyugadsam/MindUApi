@@ -27,7 +27,8 @@ steps:
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=false /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\publish" /p:DeployIisAppPath="Default Web Site"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
+- task: PublishBuildArtifacts@1
+  displayName: 'Publicando los artefactos'
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
