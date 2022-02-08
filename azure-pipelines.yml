@@ -1,19 +1,34 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
 - Qa
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'vs2017-win2016'
+
+variables:
+  buildConfiguration: 'Release'
+  proyecto: 'MindUWebApi/MindUWebApi/MindUWebApi.csproj'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
+- task: CmdLine@2
+  displayName: 'Installing EF Core CLI'
+  inputs:
+    script: 'dotnet tool install --global dotnet-ef'
+- task: DotNetCoreCLI@2
+  displayName: 'Publishing App...'
+  inputs:
+    command: 'publish'
+    publishWebProjects: false
+    projects: $(proyecto)
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory) --runtime win-x64 --self-contained'
+    zipAfterPublish: false
+    modifyOutputPath: false
+- task: PublishBuildArtifacts@1
+  displayName: 'Publicando los artefactos'
