@@ -16,44 +16,25 @@ variables:
   proyecto: '**/MindUWebApi.csproj'
 
 steps:
-- task: NuGetToolInstaller@1
+# - task: NuGetToolInstaller@1
 
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
-
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /p:PublishUrl="$(build.artifactStagingDirectory)/publish" '
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
-# - task: PublishBuildArtifacts@1
-#   displayName: 'Publicando los artefactos'
-
-# - task: VSTest@2
+# - task: NuGetCommand@2
 #   inputs:
-#     platform: '$(buildPlatform)'
-#     configuration: '$(buildConfiguration)'
+#     restoreSolution: '$(solution)'
 
 # - task: VSBuild@1
 #   inputs:
 #     solution: '$(solution)'
-#     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
+#     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /p:PublishUrl="$(build.artifactStagingDirectory)/publish" '
 #     platform: '$(buildPlatform)'
 #     configuration: '$(buildConfiguration)'
 
-
-
-# - task: DotNetCoreCLI@2
-#   displayName: 'Publishing App...'
-#   inputs:
-#     command: 'publish'
-#     publishWebProjects: false
-#     projects: $(proyecto)
-#     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory) --runtime win-x64 --self-contained'
-#     zipAfterPublish: false
-#     modifyOutputPath: false
-# - task: PublishBuildArtifacts@1
-#   displayName: 'Publicando los artefactos'
+- task: DotNetCoreCLI@2
+  displayName: 'Publishing App...'
+  inputs:
+    command: 'publish'
+    publishWebProjects: false
+    projects: $(proyecto)
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory) --runtime win-x64 --self-contained'
+    zipAfterPublish: false
+    modifyOutputPath: false
