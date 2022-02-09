@@ -10,7 +10,7 @@ pool:
   vmImage: 'vs2017-win2016'
 
 variables:
-  solution: MindUWebApi/MindUWebApi.sln'
+  solution: 'MindUWebApi/MindUWebApi.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   proyecto: '**/MindUWebApi.csproj'
@@ -25,7 +25,7 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /p:PublishUrl="$(build.artifactStagingDirectory)" '
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /p:PublishUrl="$(build.artifactStagingDirectory)/publish" '
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
