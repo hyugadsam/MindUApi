@@ -64,7 +64,7 @@ steps:
     command: 'publish'
     publishWebProjects: false
     projects: $(proyecto)
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory) --runtime win-x86 --self-contained'
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)/TestFiles --runtime win-x86 --self-contained'
     zipAfterPublish: false
     modifyOutputPath: false
     
