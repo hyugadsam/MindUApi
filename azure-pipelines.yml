@@ -13,7 +13,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  proyecto: | '**/MindUWebApi.csproj' | '**/MindUWebApi.Test.csproj'
+  proyecto: | '**/MindUWebApi.csproj' '**/MindUWebApi.Test.csproj'
 
 steps:
 # - task: NuGetToolInstaller@1
