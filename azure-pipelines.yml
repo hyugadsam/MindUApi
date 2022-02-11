@@ -13,7 +13,8 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  proyecto: | '**/MindUWebApi.csproj' '**/MindUWebApi.Test.csproj'
+  proyecto: '**/MindUWebApi.csproj'
+  TestProyecto : '**/MindUWebApi.Test.csproj'
 
 steps:
 # - task: NuGetToolInstaller@1
@@ -49,6 +50,16 @@ steps:
   
 - task: DotNetCoreCLI@2
   displayName: 'Publishing App...'
+  inputs:
+    command: 'publish'
+    publishWebProjects: false
+    projects: $(TestProyecto)
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory) --runtime win-x86 '
+    zipAfterPublish: false
+    modifyOutputPath: false
+    
+- task: DotNetCoreCLI@2
+  displayName: 'Publishing Test proj...'
   inputs:
     command: 'publish'
     publishWebProjects: false
